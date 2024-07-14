@@ -16,4 +16,5 @@ public abstract class Book {
     public Author getBookAuthor() {
         return this.bookAuthor;
     }
+    public abstract String getGenre();
 }

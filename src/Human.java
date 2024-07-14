@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public abstract class Human {
     private String firstName;
     private String lastName;
@@ -16,5 +18,6 @@ public abstract class Human {
     public int getAge() {
         return this.age;
     }
+    public abstract ArrayList<Book> getBooks();
 }
 
