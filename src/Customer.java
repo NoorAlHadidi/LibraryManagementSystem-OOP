@@ -15,4 +15,13 @@ public class Customer extends Human {
     public void returnBook(Book book) {
         reservedBooks.remove(book);
     }
+    //checks availability of book by ID
+    public Book findBook(String id) {
+        for (Book tempBook : reservedBooks) {
+            if ((tempBook.getBookID()).equals(id)) {
+                return tempBook;
+            }
+        }
+        return null;
+    }
 }

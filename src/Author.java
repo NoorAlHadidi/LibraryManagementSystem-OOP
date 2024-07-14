@@ -12,4 +12,7 @@ public class Author extends Human {
     public void writeBook(Book newBook) {
         writtenBooks.add(newBook);
     }
+    public void removeBook(Book book) {
+        writtenBooks.remove(book);
+    }
 }

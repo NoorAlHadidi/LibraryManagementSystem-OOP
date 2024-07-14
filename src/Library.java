@@ -61,8 +61,13 @@ public class Library {
     public void addAuthor(Author newAuthor) {
         authors.add(newAuthor);
     }
-    //remove a book
     public void removeAuthor(Author author) {
         authors.remove(author);
+    }
+    public void addCustomer(Customer newCustomer) {
+        customers.add(newCustomer);
+    }
+    public void removeCustomer(Customer customer) {
+        customers.remove(customer);
     }
 }

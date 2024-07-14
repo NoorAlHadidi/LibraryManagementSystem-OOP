@@ -44,7 +44,7 @@ public class Main {
                 }
             }
             library.addBook(newBook);
-            bookAuthor.writeBook(newBook);
+            library.findAuthor(authorDetails[0], authorDetails[1]).writeBook(newBook);
         }
         //removing a book
         System.out.println("Enter the ID of the book to be removed:");
@@ -71,6 +71,39 @@ public class Main {
                 break;
             }
             System.out.println("Author doesn't exist, re-enter correct name:");
+        }
+        //customer borrowing book (remove from library and add to customer books array)
+        System.out.println("Enter customer name (First Last): ");
+        String customerName = scanner.nextLine();
+        String[] customerDetails = customerName.split(" ");
+        Customer bookCustomer = new Customer(customerDetails[0], customerDetails[1]);
+        if (library.findCustomer(customerDetails[0], customerDetails[1]) == null) {
+            library.addCustomer(bookCustomer);
+        }
+        System.out.println("Enter the ID of the book to be borrowed:");
+        String borrowID;
+        while (true) {
+            borrowID = scanner.nextLine();
+            if (library.findBook(borrowID) != null) {
+                library.findCustomer(customerDetails[0], customerDetails[1]).borrowBook(library.findBook(borrowID));
+                library.removeBook(library.findBook(borrowID));
+                break;
+            }
+            System.out.println("Book doesn't exist, re-enter correct ID:");
+        }
+        //customer returning book (remove from customer's books and add to library)
+        //using same customer from above example
+        System.out.println("Enter the ID of the book to be returned:");
+        String returnID;
+        while (true) {
+            returnID = scanner.nextLine();
+            Book returnedBook = library.findCustomer(customerDetails[0], customerDetails[1]).findBook(returnID);
+            if (library.findBook(returnID) == null && returnedBook != null) {
+                library.addBook(returnedBook);
+                library.findCustomer(customerDetails[0], customerDetails[1]).returnBook(returnedBook);
+                break;
+            }
+            System.out.println("Book is not borrowed, re-enter correct ID:");
         }
     }
 }
