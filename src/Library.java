@@ -1,8 +1,9 @@
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class Library {
     private ArrayList<Book> books = new ArrayList<>();
+    private ArrayList<Author> authors = new ArrayList<>();
+    private ArrayList<Customer> customers = new ArrayList<>();
     //checks availability of book by ID
     public boolean findBook(String id) {
         for (Book tempBook : books) {
@@ -11,6 +12,24 @@ public class Library {
             }
         }
         return false;
+    }
+    //checks availability of author by name
+    public Author findAuthor(String fName, String lName) {
+        for (Author tempAuthor : authors) {
+            if ((tempAuthor.getFirstName()).equals(fName) && (tempAuthor.getLastName()).equals(lName)) {
+                return tempAuthor;
+            }
+        }
+        return null;
+    }
+    //checks availability of customer by name
+    public Customer findCustomer(String fName, String lName) {
+        for (Customer tempCustomer : customers) {
+            if ((tempCustomer.getFirstName()).equals(fName) && (tempCustomer.getLastName()).equals(lName)) {
+                return tempCustomer;
+            }
+        }
+        return null;
     }
     //add new book
     public void addBook(Book newBook) {

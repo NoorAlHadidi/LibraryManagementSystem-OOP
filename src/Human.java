@@ -3,20 +3,15 @@ import java.util.ArrayList;
 public abstract class Human {
     private String firstName;
     private String lastName;
-    private int age;
-    public Human(String fName, String lName, int num) {
+    public Human(String fName, String lName) {
         this.firstName = fName;
         this.lastName = lName;
-        this.age = num;
     }
     public String getFirstName() {
         return this.firstName;
     }
     public String getLastName() {
         return this.lastName;
-    }
-    public int getAge() {
-        return this.age;
     }
     public abstract ArrayList<Book> getBooks();
 }
