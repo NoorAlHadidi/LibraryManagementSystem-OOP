@@ -5,13 +5,13 @@ public class Library {
     private ArrayList<Author> authors = new ArrayList<>();
     private ArrayList<Customer> customers = new ArrayList<>();
     //checks availability of book by ID
-    public boolean findBook(String id) {
+    public Book findBook(String id) {
         for (Book tempBook : books) {
             if ((tempBook.getBookID()).equals(id)) {
-                return true;
+                return tempBook;
             }
         }
-        return false;
+        return null;
     }
     //checks availability of author by name
     public Author findAuthor(String fName, String lName) {
@@ -41,7 +41,7 @@ public class Library {
     }
     //display all books
     public void displayBooks() {
-        System.out.println("Displaying all books:");
+        System.out.println("Displaying all books");
         for (Book tempBook : books) {
             System.out.println("Book's title: " + tempBook.getBookTitle());
             System.out.println("Book's ID: " + tempBook.getBookID());
@@ -53,9 +53,16 @@ public class Library {
     public void retrieveBook(Author author) {
         System.out.println("Retrieving the books written by " + author.getFirstName() + " " + author.getLastName());
         for (Book tempBook : author.getBooks()) {
-            System.out.println("Book's title:" + tempBook.getBookTitle());
-            System.out.println("Book's ID:" + tempBook.getBookID());
+            System.out.println("Book's title: " + tempBook.getBookTitle());
+            System.out.println("Book's ID: " + tempBook.getBookID());
             System.out.println("----------");
         }
+    }
+    public void addAuthor(Author newAuthor) {
+        authors.add(newAuthor);
+    }
+    //remove a book
+    public void removeAuthor(Author author) {
+        authors.remove(author);
     }
 }
