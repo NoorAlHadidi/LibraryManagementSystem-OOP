@@ -5,7 +5,6 @@ public class Author extends Human {
     public Author(String fName, String lName) {
         super(fName, lName);
     }
-    @Override
     public ArrayList<Book> getBooks() {
         return this.writtenBooks;
     }
