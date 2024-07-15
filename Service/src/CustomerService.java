@@ -1,7 +1,10 @@
 import java.util.ArrayList;
 
 public class CustomerService implements CustomerInterface{
-    private ArrayList<Customer> customers = new ArrayList<>();
+    private ArrayList<Customer> customers;
+    public CustomerService() {
+        customers = new ArrayList<>();
+    }
     @Override
     public Customer findCustomer(String fName, String lName) {
         for (Customer tempCustomer : customers) {

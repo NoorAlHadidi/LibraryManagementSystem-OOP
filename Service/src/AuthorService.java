@@ -1,7 +1,10 @@
 import java.util.ArrayList;
 
 public class AuthorService implements AuthorInterface {
-    private ArrayList<Author> authors = new ArrayList<>();
+    private ArrayList<Author> authors;
+    public AuthorService() {
+        authors = new ArrayList<>();
+    }
     @Override
     public Author findAuthor(String fName, String lName) {
         for (Author tempAuthor : authors) {

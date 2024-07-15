@@ -9,4 +9,7 @@ public class Author extends Human {
     public ArrayList<Book> getBooks() {
         return this.writtenBooks;
     }
+    public boolean sameAuthor(Author author) {
+        return (this.getFirstName()).equals(author.getFirstName()) && (this.getLastName()).equals(author.getLastName());
+    }
 }

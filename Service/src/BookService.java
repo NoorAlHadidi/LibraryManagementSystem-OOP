@@ -1,7 +1,10 @@
 import java.util.ArrayList;
 
 public class BookService implements BookInterface{
-    private ArrayList<Book> books = new ArrayList<>();
+    private ArrayList<Book> books;
+    public BookService() {
+        books = new ArrayList<>();
+    }
     @Override
     public Book findBook(String id) {
         for (Book tempBook : books) {
@@ -36,10 +39,12 @@ public class BookService implements BookInterface{
     @Override
     public void retrieveBook(Author author) {
         System.out.println("Retrieving the books written by " + author.getFirstName() + " " + author.getLastName());
-        for (Book tempBook : author.getBooks()) {
-            System.out.println("Book's title: " + tempBook.getBookTitle());
-            System.out.println("Book's ID: " + tempBook.getBookID());
-            System.out.println("----------");
+        for (Book tempBook : books) {
+            if ((tempBook.getBookAuthor()).sameAuthor(author)) {
+                System.out.println("Book's title: " + tempBook.getBookTitle());
+                System.out.println("Book's ID: " + tempBook.getBookID());
+                System.out.println("----------");
+            }
         }
     }
 }
