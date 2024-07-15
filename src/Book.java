@@ -1,11 +1,13 @@
-public abstract class Book {
+public class Book {
     private String bookID;
     private String bookTitle;
     private Author bookAuthor;
-    public Book(String id, String title, Author author) {
+    private String bookGenre;
+    public Book(String id, String title, Author author, String genre) {
         this.bookID = id;
         this.bookTitle = title;
         this.bookAuthor = author;
+        this.bookGenre = genre;
     }
     public String getBookID() {
         return this.bookID;
@@ -16,5 +18,7 @@ public abstract class Book {
     public Author getBookAuthor() {
         return this.bookAuthor;
     }
-    public abstract String getGenre();
+    public String getGenre() {
+        return this.bookGenre;
+    }
 }

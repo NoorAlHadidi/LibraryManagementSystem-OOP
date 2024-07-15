@@ -32,11 +32,11 @@ public class Main {
             while (true) {
                 bookGenre = scanner.nextInt();
                 if (bookGenre == 1) {
-                    newBook = new FictionBook(bookID, bookTitle, bookAuthor);
+                    newBook = new Book(bookID, bookTitle, bookAuthor, "Fiction");
                     break;
                 }
                 else if (bookGenre == 2) {
-                    newBook = new NonFictionBook(bookID, bookTitle, bookAuthor);
+                    newBook = new Book(bookID, bookTitle, bookAuthor, "Non-Fiction");
                     break;
                 }
                 else {
