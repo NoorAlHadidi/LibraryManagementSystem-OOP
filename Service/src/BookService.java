@@ -1,10 +1,8 @@
 import java.util.ArrayList;
 
-public class Library {
+public class BookService implements BookInterface{
     private ArrayList<Book> books = new ArrayList<>();
-    private ArrayList<Author> authors = new ArrayList<>();
-    private ArrayList<Customer> customers = new ArrayList<>();
-    //checks availability of book by ID
+    @Override
     public Book findBook(String id) {
         for (Book tempBook : books) {
             if ((tempBook.getBookID()).equals(id)) {
@@ -13,33 +11,18 @@ public class Library {
         }
         return null;
     }
-    //checks availability of author by name
-    public Author findAuthor(String fName, String lName) {
-        for (Author tempAuthor : authors) {
-            if ((tempAuthor.getFirstName()).equals(fName) && (tempAuthor.getLastName()).equals(lName)) {
-                return tempAuthor;
-            }
-        }
-        return null;
-    }
-    //checks availability of customer by name
-    public Customer findCustomer(String fName, String lName) {
-        for (Customer tempCustomer : customers) {
-            if ((tempCustomer.getFirstName()).equals(fName) && (tempCustomer.getLastName()).equals(lName)) {
-                return tempCustomer;
-            }
-        }
-        return null;
-    }
     //add new book
+    @Override
     public void addBook(Book newBook) {
         books.add(newBook);
     }
     //remove a book
+    @Override
     public void removeBook(Book book) {
         books.remove(book);
     }
     //display all books
+    @Override
     public void displayBooks() {
         System.out.println("Displaying all books");
         for (Book tempBook : books) {
@@ -50,6 +33,7 @@ public class Library {
         }
     }
     //retrieve author's work
+    @Override
     public void retrieveBook(Author author) {
         System.out.println("Retrieving the books written by " + author.getFirstName() + " " + author.getLastName());
         for (Book tempBook : author.getBooks()) {
@@ -58,16 +42,5 @@ public class Library {
             System.out.println("----------");
         }
     }
-    public void addAuthor(Author newAuthor) {
-        authors.add(newAuthor);
-    }
-    public void removeAuthor(Author author) {
-        authors.remove(author);
-    }
-    public void addCustomer(Customer newCustomer) {
-        customers.add(newCustomer);
-    }
-    public void removeCustomer(Customer customer) {
-        customers.remove(customer);
-    }
 }
+
