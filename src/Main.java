@@ -110,7 +110,7 @@ public class Main {
                     break;
                 }
                 else {
-                    System.out.println("Book is already returned, re-enter another book ID:");
+                    System.out.println("Book is already returned/was not borrowed, re-enter another book ID:");
                 }
             }
             else {
