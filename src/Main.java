@@ -105,5 +105,6 @@ public class Main {
             }
             System.out.println("Book is not borrowed, re-enter correct ID:");
         }
+        scanner.close();
     }
 }
