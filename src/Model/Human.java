@@ -1,3 +1,4 @@
+package Model;
 public abstract class Human {
     private String firstName;
     private String lastName;

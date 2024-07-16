@@ -1,3 +1,8 @@
+package Interface;
+
+import Model.Author;
+import Model.Book;
+
 public interface BookInterface {
     public Book findBook(String id);
     public void addBook(Book newBook);

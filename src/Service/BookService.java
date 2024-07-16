@@ -1,6 +1,10 @@
+package Service;
+
+import Interface.BookInterface;
+import Model.*;
 import java.util.ArrayList;
 
-public class BookService implements BookInterface{
+public class BookService implements BookInterface {
     private ArrayList<Book> books;
     public BookService() {
         books = new ArrayList<>();

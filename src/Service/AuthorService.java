@@ -1,3 +1,8 @@
+package Service;
+
+import Interface.AuthorInterface;
+import Model.Author;
+
 import java.util.ArrayList;
 
 public class AuthorService implements AuthorInterface {

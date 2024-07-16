@@ -1,6 +1,10 @@
+package Service;
+
+import Interface.CustomerInterface;
+import Model.*;
 import java.util.ArrayList;
 
-public class CustomerService implements CustomerInterface{
+public class CustomerService implements CustomerInterface {
     private ArrayList<Customer> customers;
     public CustomerService() {
         customers = new ArrayList<>();
